@@ -1,4 +1,4 @@
-package students.task1;
+package students.task3;
 public interface MyImage {
     void display();
 }

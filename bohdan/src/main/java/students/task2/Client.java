@@ -2,16 +2,23 @@ package students.task2;
 
 import java.time.LocalDate;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-@ToString @AllArgsConstructor @NoArgsConstructor @Getter
+
+@ToString @Getter @NoArgsConstructor
 public class Client {
-    static private int counter = 0;
+    private static int counter = 0;
     private int id = counter++;
     private String name;
-    private LocalDate date;
-    private String gender;
+    private LocalDate dob;
+    private Sex sex;
+    private String email;
 
+    public Client(String name, LocalDate dob, Sex sex, String email) {
+        this.name = name;
+        this.dob = dob;
+        this.sex = sex;
+        this.email = email;
+    }
 }

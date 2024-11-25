@@ -1,21 +1,30 @@
 package students.task1;
-import java.util.List;
+
 import lombok.Getter;
 import lombok.Singular;
 import lombok.experimental.SuperBuilder;
 
-@Getter @SuperBuilder
-public class Student extends Human{
-    private String firstName;
-    private String secondName;
+import java.util.List;
+
+@Getter
+@SuperBuilder
+public class Student extends Human {
+
+    private static final int BEGIN_INDEX = 5;
+
     @Singular
     private List<Integer> grades;
+    @Singular
+    private List<String> mice;
     private String group;
-    private int age;
-    private double height;
 
-    // Package-private constructor to restrict instantiation to StudentBuilder
-    Student() {}
-
-    // Other methods remain the same
+    @Override
+    public String toString() {
+        String superRes = super.toString();
+        return "Student" 
+                + superRes.substring(BEGIN_INDEX, superRes.length() - 1)
+                + ", grades=" + grades 
+                + ", mice=" + mice 
+                + ", group=" + group + ")";
+    }
 }

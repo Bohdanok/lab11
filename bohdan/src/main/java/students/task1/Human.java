@@ -1,12 +1,15 @@
 package students.task1;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
-@Getter@Setter@SuperBuilder@NoArgsConstructor
+@SuperBuilder @Getter @ToString
 public class Human {
+    private Gender gender;
+    private double weight;
+    private double height;
     private String firstName;
     private String secondName;
+    private int age;
 }
